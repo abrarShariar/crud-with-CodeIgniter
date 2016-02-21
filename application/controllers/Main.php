@@ -63,7 +63,6 @@ class Main extends CI_Controller {
 		$this->load->view('archive',$data);
 	}
 
-
 	//for EDIT specific row of data
 	public function edit(){
 		$this->load->view('index');
@@ -72,7 +71,6 @@ class Main extends CI_Controller {
 		$this->load->view('edit', $data);
 	}
 	
-
 	//method for UPDATE
 	public function update(){
 		$id=$_REQUEST['id'];
@@ -99,7 +97,30 @@ class Main extends CI_Controller {
 			echo "<h3 style='text-align:center'>Failed to delete entry !! Try Again</h3>";
 		}
 		$this->archive();
+	}
 
+
+	//for SEARCH of data
+	public function search(){
+
+		$text=$this->input->post('search');						//get the text to search 
+		$result=$this->Crud->search_id($text);						//get all data from db
+
+		if(count($result)==0){
+			echo "No Results found !!";
+		}else{
+			$this->read_specific($result);
+			//var_dump($result);
+		}
+
+		
+		//var_dump($allData);
+	}
+	public function read_specific($result){
+		$data=$this->Crud->read_specific_data($result);
+
+		var_dump($data);
+		//$this->load->view('archive',$data);
 	}
 }
 ?>

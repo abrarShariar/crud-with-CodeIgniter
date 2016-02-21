@@ -80,7 +80,7 @@
 
 			//check if first_name && last_name is unique
 			public function distinct_data($allData){
-				
+
 				$fname=$this->input->post('fname');
 				$lname=$this->input->post('lname');
 				foreach ($allData as $info) {
@@ -90,6 +90,29 @@
 				}
 				return true;
 			}
+
+			//method for searching 
+			public function search_id($text){
+				$this->db->select('id');						//SELECT id
+				$this->db->from('demo');						//FROM demo
+				$this->db->like('first_name',$text);			//first_name LIKE $text
+				$this->db->or_like('last_name',$text);			//OR last_name LIKE $text
+				$this->db->or_like('age',$text);				//OR age LIKE $text
+				$this->db->or_like('skill',$text);				//OR skill LIKE $text
+				$query=$this->db->get();
+
+				return  $query->result_array();			//return as a asscoc array of id
+			}
+
+			public function read_specific_data($result){
+				/*
+				for($i=0;$i<count($result);$i++){
+
+				}
+				*/
+			
+			}
+
 
 	}
  ?>
