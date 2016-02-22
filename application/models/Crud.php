@@ -105,14 +105,20 @@
 			}
 
 			public function read_specific_data($result){
-				/*
-				for($i=0;$i<count($result);$i++){
 
+				//loop over nested arrays and find all data of given IDs
+				foreach ($result as $key => $value) {
+					foreach ($value as $key2 => $value_in) {
+						//echo $value_in."<br>";
+						$result_data[$key]=$this->read_all($value_in);
 				}
-				*/
-			
 			}
+			return $result_data;
+		}
 
-
+		public function read_all($id){
+				$query = $this->db->get_where('demo', array('id' => $id));
+				return $query->result_array();
+		}
 	}
  ?>

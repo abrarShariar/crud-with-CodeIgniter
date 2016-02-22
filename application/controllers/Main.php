@@ -107,20 +107,27 @@ class Main extends CI_Controller {
 		$result=$this->Crud->search_id($text);						//get all data from db
 
 		if(count($result)==0){
-			echo "No Results found !!";
+			echo "<br><h3 style='color:red;text-align:center'>No result found!!</h3>";
+			$this->archive();
 		}else{
 			$this->read_specific($result);
-			//var_dump($result);
 		}
-
-		
+		//var_dump($result);
 		//var_dump($allData);
 	}
 	public function read_specific($result){
-		$data=$this->Crud->read_specific_data($result);
+		$data['read']=$this->Crud->read_specific_data($result);
+		$this->load->view('index');
+		$this->load->view('search_result',$data);
 
-		var_dump($data);
-		//$this->load->view('archive',$data);
+		//...test code
+		// foreach ($data as $key => $value) {
+		// 	foreach ($value as $key2 => $value2) {
+		// 		echo $value2['first_name'];
+		// 	}
+		// 	echo "<br>";
+		// }
+
 	}
 }
 ?>
