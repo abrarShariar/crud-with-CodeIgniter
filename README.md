@@ -23,5 +23,8 @@ Now Follow the steps mentioned below to configure CRUD++ with your application
 
 ###Config Database
 
+Open *../application* directory. Here you will find the *config* subfolder. Open the *database.php* file under this sub-folder. Your path should be like:
+
+      ../application/config/database.php
 
 
