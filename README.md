@@ -16,6 +16,12 @@
   - *Register/Sign up* [register new user with unique username]
   - *Login/Sign in* [let registered users sign in using valid password]
 
+# Configure with your application:
+
+**Change the folder name to *crud* and place it under the htdocs folder of your Xampp installation directory**<br> 
+Now Follow the steps mentioned below to configure CRUD++ with your application
+
+###Config Database
 
 
 
