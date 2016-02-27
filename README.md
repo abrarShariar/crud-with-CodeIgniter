@@ -19,6 +19,10 @@
 # Configure with your application:
 
 [Download](https://github.com/abrarShariar/crud/archive/master.zip) and **Change the folder name to *crud* and place it under the htdocs folder of your Xampp installation directory**<br> 
+Your path should look like this
+
+	../htdocs/crud/
+
 Now Follow the steps mentioned below to configure CRUD++ with your application
 
 ###Config Database
@@ -55,3 +59,17 @@ You will notice the following code:
 
 Keep it untouched for now, later you can configure the path according to your application controller.
 I have also removed the 'index.php' from CI's default URI path. Read [Clean URI](https://github.com/TheHeisenbugs/Sustainable-Tourism/blob/abrar/clean_uri.md) 
+
+###Config route
+
+Open the 'routes.php' file in the following path
+
+	../application/config/routes.php
+	
+Here you will find:
+
+	$route['default_controller'] = 'main';
+	$route['404_override'] = '';
+
+that is, the 'default_controller' is set to 'main'. Leave it untouched for now. I am using the controller *Main* as the default for this demo.
+	
