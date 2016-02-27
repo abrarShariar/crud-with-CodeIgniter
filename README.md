@@ -38,7 +38,7 @@ Open the *database.php* file. In the lower section you will find the following c
 	  ...
 	  ..
 
-I am setting the *hostname* to 'localhost' cause I will be tesing it from localhost. I will be using a database named 'demo'.<br>
+I am setting the *hostname* to 'localhost' cause I will be tesing it from localhost. I will be using a database named 'heisenbug'.<br>
 In case you are not using 'MySQLi' as your database driver then you have to change the following accordingly
 
       'dbdriver' => 'mysqli',       //set your db driver accoridngly
