@@ -18,7 +18,7 @@
 
 # Configure with your application:
 
-**Change the folder name to *crud* and place it under the htdocs folder of your Xampp installation directory**<br> 
+[Download](https://github.com/abrarShariar/crud/archive/master.zip) and **Change the folder name to *crud* and place it under the htdocs folder of your Xampp installation directory**<br> 
 Now Follow the steps mentioned below to configure CRUD++ with your application
 
 ###Config Database
