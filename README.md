@@ -31,9 +31,9 @@ Open the *database.php* file. In the lower section you will find the following c
 
     $db['default'] = array(
 	  'dsn'	=> '',
-	  'hostname' => 'localhost',     	//your host name
-	  'username' => 'root',         	//username of your db
-	  'password' => '',			//password of your db
+	  'hostname' => 'localhost',	//your host name
+	  'username' => 'root',			//username of your db
+	  'password' => '',				//password of your db
 	  'database' => 'demo',			//your db name
 	  ...
 	  ..
