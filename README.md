@@ -42,3 +42,16 @@ I am setting the *hostname* to 'localhost' cause I will be tesing it from localh
 In case you are not using 'MySQLi' as your database driver then you have to change the following accordingly
 
       'dbdriver' => 'mysqli',       //set your db driver accoridngly
+     
+###Config base_url
+
+By default the base_url id set in:
+
+	 ../application/config/config.php
+	 
+You will notice the following code:
+
+	$config['base_url'] = 'http://localhost/crud';
+
+Keep it untouched for now, later you can configure the path according to your application controller.
+I have also removed the 'index.php' from CI's default URI path. Read [Clean URI](https://github.com/TheHeisenbugs/Sustainable-Tourism/blob/abrar/clean_uri.md) 
