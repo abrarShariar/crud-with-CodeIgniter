@@ -11,8 +11,8 @@ class Main extends CI_Controller {
 		$this->load->helper(array('form', 'url','html'));
         $this->load->library('form_validation');			
         //setting rules for each individual input fields
-		$this->form_validation->set_rules('fname','First Name','required|alpha_numeric_spaces');		
-		$this->form_validation->set_rules('lname','Last Name','required|alpha_numeric_spaces');
+		$this->form_validation->set_rules('fname','First Name','required|alpha_spaces');		
+		$this->form_validation->set_rules('lname','Last Name','required|alpha_spaces');
 		$this->form_validation->set_rules('skill','Skills','alpha_numeric_spaces');
 	}
 

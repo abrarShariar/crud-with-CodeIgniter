@@ -16,7 +16,6 @@
 		</form>
 	</div>
 	<br><br>
-
 				<table class="table table-hover">
 					<th>Username</th>
 					<th>Age</th>
@@ -32,10 +31,7 @@
 							<td><?php echo $info['skill'] ?></td>
 						</tr>
 					<?php endforeach ?>
-
-
 					</table>
-
 			</div>
 		</div>
 
