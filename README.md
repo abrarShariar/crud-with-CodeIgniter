@@ -15,6 +15,29 @@
   - *Form Validation* [validate form to restrict/secure entry]
   - *Register/Sign up* [register new user with unique username]
   - *Login/Sign in* [let registered users sign in using valid password]
+  
+# Directory Structure:
+
+After unpacking the project you will find the following  directory structure :
+	
+	./assets
+		-css
+		-fonts
+		-js
+	./demo
+		-application
+			..
+			-config
+			-controllers
+			-models
+			-views
+			..
+		-system
+		..
+
+
+In this demo we will only be working in the directories shown above. Keep the rest of the other directories untouched. 		
+
 
 # Configure with your application:
 
@@ -55,7 +78,7 @@ By default the base_url id set in:
 	 
 You will notice the following code:
 
-	$config['base_url'] = 'http://localhost/crud';
+	$config['base_url'] = 'http://localhost/crud/demo';
 
 Keep it untouched for now, later you can configure the path according to your application controller.
 I have also removed the 'index.php' from CI's default URI path. Read [Clean URI](https://github.com/TheHeisenbugs/Sustainable-Tourism/blob/abrar/clean_uri.md) 
