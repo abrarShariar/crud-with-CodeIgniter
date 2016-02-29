@@ -14,6 +14,7 @@
   - *Search All* [search all entry with a specific keyword]
   - *Search Filter* [search specific column entry with a specific keyword]
   - *Form Validation* [validate form to restrict/secure entry]
+  - *Generate Error/Success messages*
   - *Register/Sign up* [register new user with unique username]
   - *Login/Sign in* [let registered users sign in using valid password]
   
