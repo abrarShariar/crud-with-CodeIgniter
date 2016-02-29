@@ -47,8 +47,7 @@ I am using MYSQLi for this demo. The database name is set to **heisenbug**. You 
 			first_name varchar(255),
 			last_name varchar(255),
 			age int,
-			skill varchar(255),
-			);
+			skill varchar(255));
 
 
 # Configure with your application:
