@@ -107,4 +107,69 @@ Here you will find:
 	$route['404_override'] = '';
 
 that is, the 'default_controller' is set to 'main'. Leave it untouched for now. I am using the controller *Main* as the default for this demo.
+
+###Controller
+
+The only controller we will use for this demo is *Main*. See [Code](https://github.com/abrarShariar/crud/blob/master/demo/application/controllers/Main.php). There are **13** functions including the constructor. Each of the function is specified for a particular task which can be implied from its naming.<br> Example :
+The **new_data()** function creates a new entry into the database and returns a error/success message after checking valid form input.
+
+
+	// This function is called to INSERT data into the database
+	public function new_data(){
+		if($this->form_validation->run() == FALSE){
+			$this->load->view('index');
+			$this->load->view('create');
+			echo "<h3 style='color:red;text-align:center'>Please Enter valid information !!</h3>";
+		}else{
+			//check if first_name/last_name already exists
+			$allData=$this->Crud->read_data();
+			//var_dump($allData);
+			if($this->Crud->distinct_data($allData)){
+				$this->Crud->insert_data();
+			}else{
+				echo "<h3 style='color:red;text-align:center'>You are already registered !!</h3>";
+				$this->create();
+			}
+		}
+	}
 	
+###Model
+
+*Crud* is the default model for this demo. See [Code](https://github.com/abrarShariar/crud/blob/master/demo/application/models/Crud.php). The function **11** functions and each interacts with the db for a specific task. Their functionality can be implied by their naming <br> Example: The function **update_data()** updates an already existing entry in the db
+
+
+		//UPDATE data
+		public function update_data($id){
+					$fname=$this->input->post('fname');
+					$lname=$this->input->post('lname');
+					$age=$this->input->post('age');
+					$skill=$this->input->post('skill');
+
+					$data = array(
+						'first_name' => $fname,
+						'last_name' => $lname,
+						'age' => $age,
+						'skill' => $skill,
+						);
+					$this->db->where('id', $id);
+					
+					if($this->db->update('demo', $data)){		//check if update was successfull
+						return true;
+					}else{
+						return false;
+					}
+				}
+	
+###View 
+
+The view is separated into **7** files. Here also the filename is identical to its functionality. Bootstrap's CSS has been linked in the *index.php* file.<br>
+**NOTE: The frontend is kept as minimal as possible cause this demo mostly focus the control flow of CI in the backend**
+
+# Up & Running
+
+Considering you have followed the above steps precisely, its time to ignite your *CodeIgniter* !! . From your default browser run :
+
+	http://localhost/crud/demo/
+	
+Explore the code and send **Pull Requests** !!<br>
+**The code is well-documented as much as possible. If you find any piece of code utterly indigestibly feel free to open an issue, I will definately look into it**
