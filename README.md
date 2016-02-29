@@ -172,4 +172,5 @@ Considering you have followed the above steps precisely, its time to ignite your
 	http://localhost/crud/demo/
 	
 Explore the code and send **Pull Requests** !!<br>
-**The code is well-documented as much as possible. If you find any piece of code utterly indigestibly feel free to open an issue, I will definately look into it**
+
+**NOTE: The code is well-documented as much as possible. If you find any piece of code utterly indigestible feel free to open an issue, I will definately look into it**
