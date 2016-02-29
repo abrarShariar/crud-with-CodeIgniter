@@ -19,9 +19,7 @@
   		<button type="submit" class="btn btn-primary btn-small" name="submit">Search</button>
   		<br><br>
 	</form>
-
 	</p>
-
 				<table class="table table-hover">
 					<th>First Name</th>
 					<th>Last Name</th>

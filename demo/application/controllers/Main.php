@@ -101,9 +101,8 @@ class Main extends CI_Controller {
 	}
 
 
-	//for SEARCH of data
+	//for SEARCH of data (all)
 	public function search(){
-
 		$text=$this->input->post('search');						//get the text to search 
 		$result=$this->Crud->search_id($text);						//get all data from db
 
@@ -115,22 +114,44 @@ class Main extends CI_Controller {
 		}else{
 			$this->read_specific($result);
 		}
+
+		//for DEBUGGING
 		//var_dump($result);
 		//var_dump($allData);
 	}
+
 	public function read_specific($result){
 		$data['read']=$this->Crud->read_specific_data($result);
 		$this->load->view('index');
 		$this->load->view('search_result',$data);
 
-		//...test code
+		//...test code [DEBUG]
 		// foreach ($data as $key => $value) {
 		// 	foreach ($value as $key2 => $value2) {
 		// 		echo $value2['first_name'];
 		// 	}
 		// 	echo "<br>";
 		// }
+	}
 
+	public function search_filter(){
+			$text=$this->input->post('search_text');						//get the text to search 
+			$filter=$this->input->post('filter');
+
+			$result=$this->Crud->search_filterId($text,$filter);
+		//if no data found show error
+		if(count($result)==0){
+			echo "<br><h3 style='color:red;text-align:center'>No result found!!</h3>";
+			$this->load->view('index');	
+		}else{
+			$this->read_specific_filter($result);
+		}
+	}
+
+	public function read_specific_filter($result){
+		$data['read']=$this->Crud->read_specific_data($result);
+		$this->load->view('index');
+		$this->load->view('search_result_filter',$data);
 	}
 }
 ?>

@@ -32,20 +32,19 @@
 			}
 
 			//fetch/READ data from database [SELECT]
-			public function read_data(){
+		public function read_data(){
 				$query = $this->db->query('SELECT * FROM demo ORDER BY id DESC');		//show the latest inserted data first
 				return $query->result_array();
 			}
 
 			//fetch/READ data from database
-			public function edit_data(){
+		public function edit_data(){
 				$id=$_REQUEST['id'];
 				$query = $this->db->get_where('demo', array('id' => $id));			//get the row specified by id from the table demo
 				return $query->result_array();										//return the query result
 			}
 			//UPDATE data
-			public function update_data($id){
-
+		public function update_data($id){
 					$fname=$this->input->post('fname');
 					$lname=$this->input->post('lname');
 					$age=$this->input->post('age');
@@ -68,8 +67,7 @@
 
 
 			//DELETE data
-			public function delete_data($id){
-				
+		public function delete_data($id){
 				if($this->db->delete('demo',array('id'=>$id))){
 					return true;
 				}else{
@@ -79,8 +77,7 @@
 			}
 
 			//check if first_name && last_name is unique
-			public function distinct_data($allData){
-
+		public function distinct_data($allData){
 				$fname=$this->input->post('fname');
 				$lname=$this->input->post('lname');
 				foreach ($allData as $info) {
@@ -92,7 +89,7 @@
 			}
 
 			//method for searching 
-			public function search_id($text){
+		public function search_id($text){
 				$this->db->select('id');						//SELECT id
 				$this->db->from('demo');						//FROM demo
 				$this->db->like('first_name',$text);			//first_name LIKE $text
@@ -104,8 +101,8 @@
 				return  $query->result_array();			//return as a asscoc array of id
 			}
 
-			public function read_specific_data($result){
-
+			//raed the specific data as passed by parameter
+		public function read_specific_data($result){
 				//loop over nested arrays and find all data of given IDs
 				foreach ($result as $key => $value) {
 					foreach ($value as $key2 => $value_in) {
@@ -119,6 +116,29 @@
 		public function read_all($id){
 				$query = $this->db->get_where('demo', array('id' => $id));
 				return $query->result_array();
+		}
+
+		public function search_filterId($text,$filter){
+				$this->db->select('id');
+				$this->db->from('demo');
+
+
+				//search by filter [by column]
+				switch ($filter) {
+					case 'username':
+						$this->db->like('first_name',$text);
+						$this->db->or_like('last_name',$text);
+						break;
+					case 'age':
+						$this->db->like('age',$text);
+						break;
+					case 'skill':
+						$this->db->like('skill',$text);
+						break;
+				}
+
+				$query=$this->db->get();				//get all data required
+				return $query->result_array();			//return as a asscoc array of id
 		}
 	}
  ?>
