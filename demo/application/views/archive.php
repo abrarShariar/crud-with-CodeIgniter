@@ -22,10 +22,6 @@
 
 	</p>
 
-
-
-
-
 				<table class="table table-hover">
 					<th>First Name</th>
 					<th>Last Name</th>

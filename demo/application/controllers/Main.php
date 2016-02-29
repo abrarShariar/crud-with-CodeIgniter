@@ -8,7 +8,7 @@ class Main extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Crud');
 
-		$this->load->helper(array('form', 'url'));
+		$this->load->helper(array('form', 'url','html'));
         $this->load->library('form_validation');			
         //setting rules for each individual input fields
 		$this->form_validation->set_rules('fname','First Name','required|alpha_numeric_spaces');		
@@ -18,6 +18,7 @@ class Main extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->helper('url');
 		$this->load->view('index');
 		$this->load->view('create');
 	}
@@ -108,7 +109,9 @@ class Main extends CI_Controller {
 
 		if(count($result)==0){
 			echo "<br><h3 style='color:red;text-align:center'>No result found!!</h3>";
-			$this->archive();
+			$this->load->view('index');
+
+			//$this->archive();
 		}else{
 			$this->read_specific($result);
 		}
