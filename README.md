@@ -36,7 +36,19 @@ After unpacking the project you will find the following  directory structure :
 		..
 
 
-In this demo we will only be working in the directories shown above. Keep the rest of the other directories untouched. 		
+In this demo we will only be working in the directories shown above. Keep the rest of the other directories untouched. 
+
+# Prepare DB
+
+I am using MYSQLi for this demo. The database name is set to **heisenbug**. You can drag and drop the SQL query below and create a table. <br>
+**Note: For keeping things simple name your DB 'heisenbug' and create the table for this demo. Later you can change accordingly** 
+
+	CREATE TABLE demo (id int PRIMARY KEY AUTO_INCREMENT,
+			first_name varchar(255),
+			last_name varchar(255),
+			age int,
+			skill varchar(255),
+			);
 
 
 # Configure with your application:
