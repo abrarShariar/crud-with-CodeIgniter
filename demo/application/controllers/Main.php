@@ -9,11 +9,7 @@ class Main extends CI_Controller {
 		$this->load->model('Crud');
 
 		$this->load->helper(array('form', 'url','html'));
-        $this->load->library('form_validation');			
-        //setting rules for each individual input fields
-		$this->form_validation->set_rules('fname','First Name','required|alpha_spaces');		
-		$this->form_validation->set_rules('lname','Last Name','required|alpha_spaces');
-		$this->form_validation->set_rules('skill','Skills','alpha_numeric_spaces');
+        
 	}
 
 	public function index()
@@ -31,6 +27,11 @@ class Main extends CI_Controller {
 
 	// This function is called to INSERT data into the database
 	public function new_data(){
+		$this->load->library('form_validation');			
+        //setting rules for each individual input fields
+		$this->form_validation->set_rules('fname','First Name','required|alpha_numeric_spaces');		
+		$this->form_validation->set_rules('lname','Last Name','required|alpha_numeric_spaces');
+		$this->form_validation->set_rules('skill','Skills','alpha_numeric_spaces');
 		
 		if($this->form_validation->run() == FALSE){
 			$this->load->view('index');

@@ -37,7 +37,7 @@
 				return $query->result_array();
 			}
 
-			//fetch/READ data from database
+			//Edit data from database
 		public function edit_data(){
 				$id=$_REQUEST['id'];
 				$query = $this->db->get_where('demo', array('id' => $id));			//get the row specified by id from the table demo

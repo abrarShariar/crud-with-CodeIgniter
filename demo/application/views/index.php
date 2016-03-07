@@ -2,9 +2,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">	 -->
- <link rel="stylesheet" type="text/css" href="/crud/assets/css/bootstrap.min.css">
- <!-- keep the css/js/fonts file in an asset folder outside main application -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">	
+<!--  <link rel="stylesheet" type="text/css" href="/crud/assets/css/bootstrap.min.css">
+ --> <!-- keep the css/js/fonts file in an asset folder outside main application -->
 <html>
 <head>
 <style type="text/css">
